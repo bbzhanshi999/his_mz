@@ -7,6 +7,8 @@ import java.util.Date;
 import java.util.UUID;
 
 @Data
+
+
 public class BaseBean {
 
     private String id;
