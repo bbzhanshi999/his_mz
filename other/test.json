@@ -1,0 +1,74 @@
+{
+  "total": 6,
+  "list": [
+    {
+      "id": "6",
+      "updateTime": "2019-07-11 02:11:45",
+      "delFlag": "0",
+      "departName": "财务科",
+      "departType": "3",
+      "departLevel": "3",
+      "pid": null,
+      "children": null
+    },
+    {
+      "id": "5",
+      "updateTime": "2019-07-11 02:11:44",
+      "delFlag": "0",
+      "departName": "外壳",
+      "departType": "1",
+      "departLevel": "1",
+      "pid": null,
+      "children": null
+    },
+    {
+      "id": "4",
+      "updateTime": "2019-07-11 02:11:43",
+      "delFlag": "0",
+      "departName": "内科",
+      "departType": "1",
+      "departLevel": "1",
+      "pid": null,
+      "children": null
+    },
+    {
+      "id": "3",
+      "updateTime": "2019-07-11 02:11:42",
+      "delFlag": "0",
+      "departName": "药房",
+      "departType": "1",
+      "departLevel": "1",
+      "pid": null,
+      "children": null
+    },
+    {
+      "id": "2",
+      "updateTime": "2019-07-11 02:11:38",
+      "delFlag": "0",
+      "departName": "妇产科",
+      "departType": "1",
+      "departLevel": "1",
+      "pid": null,
+      "children": null
+    }
+  ],
+  "pageNum": 1,
+  "pageSize": 5,
+  "size": 5,
+  "startRow": 1,
+  "endRow": 5,
+  "pages": 2,
+  "prePage": 0,
+  "nextPage": 2,
+  "isFirstPage": true,
+  "isLastPage": false,
+  "hasPreviousPage": false,
+  "hasNextPage": true,
+  "navigatePages": 8,
+  "navigatepageNums": [
+    1,
+    2
+  ],
+  "navigateFirstPage": 1,
+  "navigateLastPage": 2
+}

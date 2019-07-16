@@ -11,7 +11,7 @@ import java.util.List;
 public class BaseController<T extends BaseBean, S extends BaseService<T, D>, D extends BaseDao<T>> {
 
     @Autowired
-    private S service;
+    protected S service;
 
     public void insert(T t) {
         service.insert(t);

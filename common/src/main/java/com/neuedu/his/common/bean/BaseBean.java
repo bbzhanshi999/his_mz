@@ -3,14 +3,16 @@ package com.neuedu.his.common.bean;
 import com.neuedu.his.common.util.CommonIdGenerator;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.UUID;
 
 @Data
 
 
-public class BaseBean {
+public class BaseBean implements Serializable {
 
+    protected static final long serialVersionUID = 1L;
     private String id;
     private Date updateTime;
     private String delFlag;

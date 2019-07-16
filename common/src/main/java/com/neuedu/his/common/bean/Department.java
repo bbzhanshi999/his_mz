@@ -7,6 +7,7 @@ import java.util.List;
 @Data
 public class Department extends BaseBean {
 
+    private static final long serialVersionUID = 1L;
     private String departName;
     private String departType;
     private String departLevel;

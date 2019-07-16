@@ -10,6 +10,7 @@ import java.util.Date;
 @Data
 public class CaseHistory extends BaseBean {
     //201809010001
+    private static final long serialVersionUID = 1L;
     private String patientName; // 病人姓名
     private String gender; //性别
     private Integer age; //年龄

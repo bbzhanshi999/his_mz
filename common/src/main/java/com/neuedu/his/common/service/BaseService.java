@@ -1,6 +1,5 @@
 package com.neuedu.his.common.service;
 
-import com.github.pagehelper.ISelect;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.neuedu.his.common.bean.BaseBean;
@@ -12,7 +11,7 @@ import java.util.List;
 public class BaseService<T extends BaseBean,D extends BaseDao<T>> {
 
     @Autowired
-    private D dao;
+    protected D dao;
 
 
     public void insert(T t){
