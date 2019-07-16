@@ -23,4 +23,28 @@
       </where>
       order by update_time DESC
     </select>
+
+    <insert id="insert">
+        insert into depart_info (id,depart_name,depart_type,depart_level,update_time)VALUES (
+          #{id},#{departName},#{departType},#{departLevel},#{updateTime}
+        )
+    </insert>
+
+    <update id="update">
+        update depart_info set
+        depart_name = #{departName},
+        depart_type = #{departType},
+        depart_level = #{departLevel},
+        update_time = #{updateTime}
+        where id=#{id}
+    </update>
+
+    <delete id="delete">
+        update depart_info set del_flag = '1' where id = #{id}
+    </delete>
+
+    <delete id="deleteById">
+         update depart_info set del_flag = '1' where id = #{id}
+    </delete>
+
 </mapper>

@@ -21,7 +21,6 @@ public class AuthInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         //拿到session
         HttpSession session = request.getSession();
-        System.out.println(session.getId());
         UserInfo userInfo = (UserInfo) session.getAttribute("principal");
 
         //如果session中包含userinfo，那么代表登录成功
