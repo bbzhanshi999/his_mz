@@ -1,14 +1,9 @@
 version: '3'
 services:
   web:
-    image: nginx
+    build: ./front/global/
     ports:
-        - "8080:80"
-    volumes:
-        - ./front/global/fglobal/:/usr/share/nginx/html/
-        - ./front/global/nginx.conf:/etc/nginx/nginx.conf
-    restart: always
-    container_name: fglobal
+      - "8080:80"
     depends_on:
       - gateway
 
