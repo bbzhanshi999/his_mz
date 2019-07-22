@@ -11,8 +11,6 @@ services:
     container_name: fglobal
     depends_on:
       - gateway
-    links:
-      - gateway
 
   gateway:
     build:
@@ -21,10 +19,8 @@ services:
         - JAR_FILE=./gateway-0.0.1-SNAPSHOT.jar
         - PROFILE=prod
     ports:
-      - 5555:5555
+      - "5555:5555"
     depends_on:
-      - register
-    links:
       - register
 
 
@@ -35,4 +31,4 @@ services:
         - JAR_FILE=./registry-server-0.0.1-SNAPSHOT.jar
         - PROFILE=prod
     ports:
-      - 8761:8761
+      - "8761:8761"

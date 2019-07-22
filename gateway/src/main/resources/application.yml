@@ -1,3 +1,30 @@
+server:
+  port: 5555
 spring:
-  profiles:
-    active: dev
+  application:
+    name: gateway
+eureka:
+  client:
+    service-url:
+      defaultZone: http://register:8761/eureka
+  instance:
+    hostname: gateway
+
+zuul:
+  routes:
+    menzhen:
+      path: /api/menzhen/**
+      serviceId: menzhen
+    doctor:
+      path: /api/doctor/**
+      serviceId: doctor
+    drug:
+      path: /api/drug/**
+      serviceId: drug
+    global:
+      path: /api/global/**
+      serviceId: global
+  sensitive-headers:
+ribbon:
+  ReadTimeout: 60000
+  SocketTimeout: 60000
