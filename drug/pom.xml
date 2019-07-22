@@ -17,6 +17,12 @@
 
     <!--本项目所需依赖-->
     <dependencies>
+        <!--引入common包-->
+        <dependency>
+            <groupId>com.neuedu</groupId>
+            <artifactId>common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
@@ -27,6 +33,12 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.38</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>1.2.12</version>
+        </dependency>
+
         <!--向外界请求服务，除了使用ribbon以外，还可以用已经封装了ribbon以及hystrix（熔断器）的feign来进行服务调用-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

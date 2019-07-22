@@ -23,4 +23,6 @@ zuul:
       path: /api/global/**
       serviceId: global
   sensitive-headers:
-
+ribbon:
+  ReadTimeout: 60000
+  SocketTimeout: 60000

@@ -3,6 +3,16 @@ server:
 spring:
   application:
     name: drug
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: root123
+      url: jdbc:mysql://localhost:3306/his_menzhen?useUnicode=true&characterEncoding=utf8
+  mvc:
+    date-format: yyyy-MM-dd HH:mm:ss
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
 eureka:
   client:
     service-url:
@@ -10,4 +20,8 @@ eureka:
 feign:
   hystrix:
     enabled: true
+mybatis:
+  mapper-locations: classpath:/mappers/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
 # 启动feign的熔断器功能

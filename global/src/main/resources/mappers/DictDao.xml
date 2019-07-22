@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neuedu.his.global.dao.DictDao">
+
+    <select id="findList" resultType="com.neuedu.his.common.bean.Dict">
+        select
+        *
+        from sys_dict
+        <where>
+            <if test="dictType!=null and dictType!=''">
+                and dict_type = #{dictType}
+            </if>
+        </where>
+    </select>
+</mapper>

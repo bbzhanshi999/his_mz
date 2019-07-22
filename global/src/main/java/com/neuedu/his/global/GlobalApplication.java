@@ -26,6 +26,7 @@ public class GlobalApplication implements WebMvcConfigurer {
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new AuthInterceptor()).addPathPatterns("/**").excludePathPatterns("/login");
+        registry.addInterceptor(new AuthInterceptor()).addPathPatterns("/**").excludePathPatterns("/login")
+        .excludePathPatterns("/*/find","/*/findList","*/findAll","*/page","/*/find/*");
     }
 }

@@ -7,7 +7,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableFeignClients
+@EnableFeignClients //运行当前项目利用feign来对其他服务进行接口式调用
 public class DrugApplication {
 
 
