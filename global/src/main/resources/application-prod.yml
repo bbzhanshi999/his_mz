@@ -7,7 +7,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: 1234
-    url: jdbc:mysql://mysql:3308/his_menzhen?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://mysql:3306/his_menzhen?useUnicode=true&characterEncoding=utf8
   mvc:
     date-format: yyyy-MM-dd HH:mm:ss
   jackson:
@@ -22,7 +22,7 @@ spring:
 eureka:
   client:
     service-url:
-      default-zone: http://register:8761/eureka
+      defaultZone: http://register:8761/eureka
 feign:
   hystrix:
     enabled: true

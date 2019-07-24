@@ -13,6 +13,11 @@ File Encoding         : 65001
 Date: 2019-07-22 09:30:58
 */
 
+create database `his_menzhen` default character set utf8 collate utf8_general_ci;
+
+USE his_menzhen;
+
+
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
@@ -150,7 +155,7 @@ CREATE TABLE `employee_info` (
 -- Records of employee_info
 -- ----------------------------
 INSERT INTO `employee_info` VALUES ('1', '蔡徐坤', '1388888888', '男', '21', '1', '2019-07-12 07:53:27', '0');
-INSERT INTO `employee_info` VALUES ('2', '吴亦凡', '1399999999', '男', '29', '1', '2019-07-12 07:54:08', '0');
+INSERT INTO `employee_info` VALUES ('2', '吴亦凡', '1399999999', '1', '29', '1', '2019-07-12 07:54:08', '0');
 
 -- ----------------------------
 -- Table structure for `prescription_detail`

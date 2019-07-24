@@ -27,3 +27,27 @@ services:
         - PROFILE=prod
     ports:
       - "8761:8761"
+
+  redis:
+    image: redis:latest
+
+  global:
+    build:
+      context: ./global/
+      args:
+        - JAR_FILE=./global-0.0.1-SNAPSHOT.jar
+    depends_on:
+      - mysql
+      - register
+      - gateway
+      - redis
+
+  mysql:
+    image: mysql:5.6
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+    volumes:
+     - ./db:/docker-entrypoint-initdb.d/
+    ports:
+      - "3307:3306"
