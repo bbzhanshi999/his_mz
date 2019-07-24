@@ -25,20 +25,20 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `case_history`;
 CREATE TABLE `case_history` (
-  `id` varchar(12) NOT NULL COMMENT '²¡ÀúºÅ×÷ÎªÖ÷¼ü£ºÀıÈç201907080001',
-  `p_name` varchar(32) DEFAULT NULL COMMENT '²¡ÈËĞÕÃû',
-  `gender` char(1) DEFAULT NULL COMMENT '£¨×Öµägender£©»¼ÕßĞÔ±ğ£º0£ºÅ® 1£ºÄĞ 2£ºÎ´Öª',
-  `age` int(11) DEFAULT NULL COMMENT '»¼ÕßÄêÁä',
-  `birthday` datetime DEFAULT NULL COMMENT '³öÉúÈÕÆÚ',
-  `identity_card` varchar(20) DEFAULT NULL COMMENT 'Éí·İÖ¤',
-  `home_address` varchar(100) DEFAULT NULL COMMENT '¼ÒÍ¥×¡Ö·',
-  `attend_time` date DEFAULT NULL COMMENT '¾ÍÕïÈÕÆÚ',
-  `depart_id` varchar(32) DEFAULT NULL COMMENT '¹ÒºÅ¿ÆÊÒid',
-  `doctor_id` varchar(32) DEFAULT NULL COMMENT '¿´ÕïÒ½Éúid',
-  `update_time` datetime DEFAULT NULL COMMENT '¸üĞÂÈÕÆÚ',
-  `del_flag` char(1) DEFAULT '0' COMMENT 'Âß¼­É¾³ı±ê¼ÇÎ»£º0£ºnormal 1£ºÉ¾³ı',
+  `id` varchar(12) NOT NULL COMMENT 'ç—…å†å·ä½œä¸ºä¸»é”®ï¼šä¾‹å¦‚201907080001',
+  `p_name` varchar(32) DEFAULT NULL COMMENT 'ç—…äººå§“å',
+  `gender` char(1) DEFAULT NULL COMMENT 'ï¼ˆå­—å…¸genderï¼‰æ‚£è€…æ€§åˆ«ï¼š0ï¼šå¥³ 1ï¼šç”· 2ï¼šæœªçŸ¥',
+  `age` int(11) DEFAULT NULL COMMENT 'æ‚£è€…å¹´é¾„',
+  `birthday` datetime DEFAULT NULL COMMENT 'å‡ºç”Ÿæ—¥æœŸ',
+  `identity_card` varchar(20) DEFAULT NULL COMMENT 'èº«ä»½è¯',
+  `home_address` varchar(100) DEFAULT NULL COMMENT 'å®¶åº­ä½å€',
+  `attend_time` date DEFAULT NULL COMMENT 'å°±è¯Šæ—¥æœŸ',
+  `depart_id` varchar(32) DEFAULT NULL COMMENT 'æŒ‚å·ç§‘å®¤id',
+  `doctor_id` varchar(32) DEFAULT NULL COMMENT 'çœ‹è¯ŠåŒ»ç”Ÿid',
+  `update_time` datetime DEFAULT NULL COMMENT 'æ›´æ–°æ—¥æœŸ',
+  `del_flag` char(1) DEFAULT '0' COMMENT 'é€»è¾‘åˆ é™¤æ ‡è®°ä½ï¼š0ï¼šnormal 1ï¼šåˆ é™¤',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='²¡Àú±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ç—…å†è¡¨';
 
 -- ----------------------------
 -- Records of case_history
@@ -49,18 +49,18 @@ CREATE TABLE `case_history` (
 -- ----------------------------
 DROP TABLE IF EXISTS `charge_item_info`;
 CREATE TABLE `charge_item_info` (
-  `id` varchar(32) NOT NULL COMMENT 'Ö÷¼üid£¬Èç¹ûitem_typeÊÇÒ©Æ·£¬¸ÃÖ÷¼üÓëÒ©Æ·ĞÅÏ¢±íµÄÖ÷¼üÏàÍ¬',
-  `item_type` varchar(10) DEFAULT NULL COMMENT 'ÏîÄ¿ÀàĞÍ£º general£ºÒ»°ã £¬drug£ºÒ©£¬registration£º¹ÒºÅ£¬check:¼ì²é£¬ cure£ºÕïÁÆµÈ',
-  `item_name` varchar(32) DEFAULT NULL COMMENT 'ÏîÄ¿Ãû³Æ',
-  `join_id` varchar(32) DEFAULT NULL COMMENT '¹ØÁªÒµÎñÂß¼­±íµÄid',
-  `category` varchar(20) DEFAULT NULL COMMENT '¹æ¸ñ',
-  `unit` varchar(10) DEFAULT NULL COMMENT 'µ¥Î»£¬Èç£ºÆ¿£¬ºĞ£¬¸ùµÈ',
-  `price` decimal(7,2) DEFAULT NULL COMMENT 'ÏîÄ¿Ô­¼Û',
-  `care_rate` double(7,2) DEFAULT NULL COMMENT 'Ò½±£³Ğµ£±ÈÀı',
-  `update_time` datetime DEFAULT NULL COMMENT '¸üĞÂÈÕÆÚ',
-  `del_flag` char(1) DEFAULT '0' COMMENT 'Âß¼­É¾³ı±ê¼ÇÎ»£º0£ºnormal 1£ºÉ¾³ı',
+  `id` varchar(32) NOT NULL COMMENT 'ä¸»é”®idï¼Œå¦‚æœitem_typeæ˜¯è¯å“ï¼Œè¯¥ä¸»é”®ä¸è¯å“ä¿¡æ¯è¡¨çš„ä¸»é”®ç›¸åŒ',
+  `item_type` varchar(10) DEFAULT NULL COMMENT 'é¡¹ç›®ç±»å‹ï¼š generalï¼šä¸€èˆ¬ ï¼Œdrugï¼šè¯ï¼Œregistrationï¼šæŒ‚å·ï¼Œcheck:æ£€æŸ¥ï¼Œ cureï¼šè¯Šç–—ç­‰',
+  `item_name` varchar(32) DEFAULT NULL COMMENT 'é¡¹ç›®åç§°',
+  `join_id` varchar(32) DEFAULT NULL COMMENT 'å…³è”ä¸šåŠ¡é€»è¾‘è¡¨çš„id',
+  `category` varchar(20) DEFAULT NULL COMMENT 'è§„æ ¼',
+  `unit` varchar(10) DEFAULT NULL COMMENT 'å•ä½ï¼Œå¦‚ï¼šç“¶ï¼Œç›’ï¼Œæ ¹ç­‰',
+  `price` decimal(7,2) DEFAULT NULL COMMENT 'é¡¹ç›®åŸä»·',
+  `care_rate` double(7,2) DEFAULT NULL COMMENT 'åŒ»ä¿æ‰¿æ‹…æ¯”ä¾‹',
+  `update_time` datetime DEFAULT NULL COMMENT 'æ›´æ–°æ—¥æœŸ',
+  `del_flag` char(1) DEFAULT '0' COMMENT 'é€»è¾‘åˆ é™¤æ ‡è®°ä½ï¼š0ï¼šnormal 1ï¼šåˆ é™¤',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='½áËãÏîÄ¿ĞÅÏ¢±í£¨ÀıÈç¹ÒºÅ£¬Ò©Æ·£¬Ò½ÓÃÒ»´ÎĞÔÓÃÆ·µÈ£©';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ç»“ç®—é¡¹ç›®ä¿¡æ¯è¡¨ï¼ˆä¾‹å¦‚æŒ‚å·ï¼Œè¯å“ï¼ŒåŒ»ç”¨ä¸€æ¬¡æ€§ç”¨å“ç­‰ï¼‰';
 
 -- ----------------------------
 -- Records of charge_item_info
@@ -71,43 +71,43 @@ CREATE TABLE `charge_item_info` (
 -- ----------------------------
 DROP TABLE IF EXISTS `depart_info`;
 CREATE TABLE `depart_info` (
-  `id` varchar(32) NOT NULL COMMENT 'Ö÷¼üid',
-  `depart_name` varchar(32) DEFAULT NULL COMMENT '¿ÆÊÒ»ò²¿ÃÅÃû³Æ',
-  `depart_type` varchar(10) DEFAULT NULL COMMENT '¿ÆÊÒÀàĞÍ£ºmedical£ºÒ½ÁÆ\r\n               administration£ºĞĞÕş\r\n£¨×Öµä×Ö¶Î depart_type£©\r\n',
-  `depart_level` char(1) DEFAULT '1' COMMENT '£¨×Öµädepart_level£©¿ÆÊÒ¼¶±ğ£º1,2,3 ÈıÀà',
-  `pid` varchar(32) DEFAULT NULL COMMENT '¸¸²¿ÃÅ»òÕß¿ÆÊÒµÄid',
-  `update_time` datetime DEFAULT NULL COMMENT '¸üĞÂÈÕÆÚ',
-  `del_flag` char(1) DEFAULT '0' COMMENT 'Âß¼­É¾³ı±ê¼ÇÎ»£º0£ºnormal 1£ºÉ¾³ı',
+  `id` varchar(32) NOT NULL COMMENT 'ä¸»é”®id',
+  `depart_name` varchar(32) DEFAULT NULL COMMENT 'ç§‘å®¤æˆ–éƒ¨é—¨åç§°',
+  `depart_type` varchar(10) DEFAULT NULL COMMENT 'ç§‘å®¤ç±»å‹ï¼šmedicalï¼šåŒ»ç–—\r\n               administrationï¼šè¡Œæ”¿\r\nï¼ˆå­—å…¸å­—æ®µ depart_typeï¼‰\r\n',
+  `depart_level` char(1) DEFAULT '1' COMMENT 'ï¼ˆå­—å…¸depart_levelï¼‰ç§‘å®¤çº§åˆ«ï¼š1,2,3 ä¸‰ç±»',
+  `pid` varchar(32) DEFAULT NULL COMMENT 'çˆ¶éƒ¨é—¨æˆ–è€…ç§‘å®¤çš„id',
+  `update_time` datetime DEFAULT NULL COMMENT 'æ›´æ–°æ—¥æœŸ',
+  `del_flag` char(1) DEFAULT '0' COMMENT 'é€»è¾‘åˆ é™¤æ ‡è®°ä½ï¼š0ï¼šnormal 1ï¼šåˆ é™¤',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='²¿ÃÅĞÅÏ¢';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='éƒ¨é—¨ä¿¡æ¯';
 
 -- ----------------------------
 -- Records of depart_info
 -- ----------------------------
-INSERT INTO `depart_info` VALUES ('086f698d4e6d46e5bacbd29e6a374ca6', '¶ú±Çºí¿Æ', 'medical', '1', null, '2019-07-16 19:48:08', '1');
-INSERT INTO `depart_info` VALUES ('1', 'ÈËÊÂ¿Æ', 'admin', '3', null, '2019-07-11 02:11:27', '0');
-INSERT INTO `depart_info` VALUES ('1c97c12df2d1472cbac66342207cb906', 'Ïû»¯ÄÚ¿Æ', 'medical', '1', null, '2019-07-17 10:40:10', '0');
-INSERT INTO `depart_info` VALUES ('2', '¸¾²ú¿Æ', 'medical', '1', null, '2019-07-11 02:11:38', '0');
-INSERT INTO `depart_info` VALUES ('3', 'Ò©·¿', 'medical', '1', null, '2019-07-11 02:11:42', '0');
-INSERT INTO `depart_info` VALUES ('4', 'ÄÚ¿Æ', 'medical', '1', null, '2019-07-11 02:11:43', '0');
-INSERT INTO `depart_info` VALUES ('5', '¸Ø³¦¿Æ', 'medical', '2', null, '2019-07-17 10:08:01', '0');
-INSERT INTO `depart_info` VALUES ('6', '²ÆÎñ¿Æ', 'admin', '3', null, '2019-07-11 02:11:45', '0');
-INSERT INTO `depart_info` VALUES ('f3ece718e2244acb9aba8a867e9893a6', '¹Ç¿Æ', 'medical', '3', null, '2019-07-16 15:27:24', '1');
+INSERT INTO `depart_info` VALUES ('086f698d4e6d46e5bacbd29e6a374ca6', 'è€³é¼»å–‰ç§‘', 'medical', '1', null, '2019-07-16 19:48:08', '1');
+INSERT INTO `depart_info` VALUES ('1', 'äººäº‹ç§‘', 'admin', '3', null, '2019-07-11 02:11:27', '0');
+INSERT INTO `depart_info` VALUES ('1c97c12df2d1472cbac66342207cb906', 'æ¶ˆåŒ–å†…ç§‘', 'medical', '1', null, '2019-07-17 10:40:10', '0');
+INSERT INTO `depart_info` VALUES ('2', 'å¦‡äº§ç§‘', 'medical', '1', null, '2019-07-11 02:11:38', '0');
+INSERT INTO `depart_info` VALUES ('3', 'è¯æˆ¿', 'medical', '1', null, '2019-07-11 02:11:42', '0');
+INSERT INTO `depart_info` VALUES ('4', 'å†…ç§‘', 'medical', '1', null, '2019-07-11 02:11:43', '0');
+INSERT INTO `depart_info` VALUES ('5', 'è‚›è‚ ç§‘', 'medical', '2', null, '2019-07-17 10:08:01', '0');
+INSERT INTO `depart_info` VALUES ('6', 'è´¢åŠ¡ç§‘', 'admin', '3', null, '2019-07-11 02:11:45', '0');
+INSERT INTO `depart_info` VALUES ('f3ece718e2244acb9aba8a867e9893a6', 'éª¨ç§‘', 'medical', '3', null, '2019-07-16 15:27:24', '1');
 
 -- ----------------------------
 -- Table structure for `drug_info`
 -- ----------------------------
 DROP TABLE IF EXISTS `drug_info`;
 CREATE TABLE `drug_info` (
-  `id` varchar(32) NOT NULL COMMENT 'Ö÷¼üid£¬¶ÔÓ¦»áÔÚÊÕ·ÑÏîÄ¿ÖĞÔö¼ÓÒ»ÌõÒ»Ò»¶ÔÓ¦µÄÊÕ·ÑÏîÄ¿',
-  `drug_name` varchar(32) DEFAULT NULL COMMENT 'Ò©Æ·Ãû³Æ',
-  `composition` varchar(255) DEFAULT NULL COMMENT '³É·İ',
-  `category` varchar(20) DEFAULT NULL COMMENT '¹æ¸ñ',
-  `unit` varchar(10) DEFAULT NULL COMMENT '³öÊÛµ¥Î»£º±ÈÈçºĞ£¬¿é£¬°å£¬Æ¿µÈ',
-  `p_unit` varchar(10) DEFAULT NULL COMMENT '´¦·½¼ÁÁ¿µ¥Î»£ºml £¬g£¬ mgµÈ',
-  `approval_no` varchar(12) DEFAULT NULL COMMENT 'Ò©Æ·×¼×ÖºÅ',
-  `update_time` datetime DEFAULT NULL COMMENT '¸üĞÂÈÕÆÚ',
-  `del_flag` char(1) DEFAULT '0' COMMENT 'Âß¼­É¾³ı±ê¼ÇÎ»£º0£ºnormal 1£ºÉ¾³ı',
+  `id` varchar(32) NOT NULL COMMENT 'ä¸»é”®idï¼Œå¯¹åº”ä¼šåœ¨æ”¶è´¹é¡¹ç›®ä¸­å¢åŠ ä¸€æ¡ä¸€ä¸€å¯¹åº”çš„æ”¶è´¹é¡¹ç›®',
+  `drug_name` varchar(32) DEFAULT NULL COMMENT 'è¯å“åç§°',
+  `composition` varchar(255) DEFAULT NULL COMMENT 'æˆä»½',
+  `category` varchar(20) DEFAULT NULL COMMENT 'è§„æ ¼',
+  `unit` varchar(10) DEFAULT NULL COMMENT 'å‡ºå”®å•ä½ï¼šæ¯”å¦‚ç›’ï¼Œå—ï¼Œæ¿ï¼Œç“¶ç­‰',
+  `p_unit` varchar(10) DEFAULT NULL COMMENT 'å¤„æ–¹å‰‚é‡å•ä½ï¼šml ï¼Œgï¼Œ mgç­‰',
+  `approval_no` varchar(12) DEFAULT NULL COMMENT 'è¯å“å‡†å­—å·',
+  `update_time` datetime DEFAULT NULL COMMENT 'æ›´æ–°æ—¥æœŸ',
+  `del_flag` char(1) DEFAULT '0' COMMENT 'é€»è¾‘åˆ é™¤æ ‡è®°ä½ï¼š0ï¼šnormal 1ï¼šåˆ é™¤',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -120,16 +120,16 @@ CREATE TABLE `drug_info` (
 -- ----------------------------
 DROP TABLE IF EXISTS `drug_send_info`;
 CREATE TABLE `drug_send_info` (
-  `id` varchar(32) NOT NULL COMMENT 'Ö÷¼üid',
-  `drug_depart_id` varchar(32) DEFAULT NULL COMMENT 'Ò©·¿id£¬¹ØÁªdepart_info',
-  `send_time` datetime DEFAULT NULL COMMENT '·¢ËÍÈÕÆÚ',
-  `operator_id` varchar(32) DEFAULT NULL COMMENT '²Ù×÷Õßid',
-  `status` char(1) DEFAULT NULL COMMENT '£¨×Öµäsend_drug_status£©·¢ËÍ×´Ì¬:0:Î´·¢ËÍ£¨µ±¸¶·Ñºó£¬ÃÅÕïÏµÍ³Ö±½ÓÍÆËÍĞÅÏ¢µ½Ò©·¿Éú³É·¢Ò©µ¥£©£¬1£ºÒÑ·¢ËÍ',
-  `pres_id` varchar(32) DEFAULT NULL COMMENT '´¦·½id',
-  `update_time` datetime DEFAULT NULL COMMENT '¸üĞÂÈÕÆÚ',
-  `del_flag` char(1) DEFAULT '0' COMMENT 'Âß¼­É¾³ı±ê¼ÇÎ»£º0£ºnormal 1£ºÉ¾³ı',
+  `id` varchar(32) NOT NULL COMMENT 'ä¸»é”®id',
+  `drug_depart_id` varchar(32) DEFAULT NULL COMMENT 'è¯æˆ¿idï¼Œå…³è”depart_info',
+  `send_time` datetime DEFAULT NULL COMMENT 'å‘é€æ—¥æœŸ',
+  `operator_id` varchar(32) DEFAULT NULL COMMENT 'æ“ä½œè€…id',
+  `status` char(1) DEFAULT NULL COMMENT 'ï¼ˆå­—å…¸send_drug_statusï¼‰å‘é€çŠ¶æ€:0:æœªå‘é€ï¼ˆå½“ä»˜è´¹åï¼Œé—¨è¯Šç³»ç»Ÿç›´æ¥æ¨é€ä¿¡æ¯åˆ°è¯æˆ¿ç”Ÿæˆå‘è¯å•ï¼‰ï¼Œ1ï¼šå·²å‘é€',
+  `pres_id` varchar(32) DEFAULT NULL COMMENT 'å¤„æ–¹id',
+  `update_time` datetime DEFAULT NULL COMMENT 'æ›´æ–°æ—¥æœŸ',
+  `del_flag` char(1) DEFAULT '0' COMMENT 'é€»è¾‘åˆ é™¤æ ‡è®°ä½ï¼š0ï¼šnormal 1ï¼šåˆ é™¤',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='·¢Ò©ĞÅÏ¢±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='å‘è¯ä¿¡æ¯è¡¨';
 
 -- ----------------------------
 -- Records of drug_send_info
@@ -140,40 +140,40 @@ CREATE TABLE `drug_send_info` (
 -- ----------------------------
 DROP TABLE IF EXISTS `employee_info`;
 CREATE TABLE `employee_info` (
-  `id` varchar(32) NOT NULL COMMENT 'Ö÷¼üid',
-  `e_name` varchar(32) DEFAULT NULL COMMENT '¹ÍÔ±ĞÕÃû',
-  `phone` varchar(20) DEFAULT NULL COMMENT 'µç»°ºÅÂë',
-  `gender` char(1) DEFAULT NULL COMMENT 'ĞÔ±ğ',
-  `age` int(11) DEFAULT NULL COMMENT 'ÄêÁä',
-  `emp_type` char(1) DEFAULT NULL COMMENT '£¨×Öµäemp_type£©Ô±¹¤ÀàĞÍ£º0£ºÒ½Éú 1£º»¤Ê¿ 2£ºĞĞÕş 3£ºÔº¹¤',
-  `update_time` datetime DEFAULT NULL COMMENT '¸üĞÂÈÕÆÚ',
-  `del_flag` char(1) DEFAULT '0' COMMENT 'Âß¼­É¾³ı±ê¼ÇÎ»£º0£ºnormal 1£ºÉ¾³ı',
+  `id` varchar(32) NOT NULL COMMENT 'ä¸»é”®id',
+  `e_name` varchar(32) DEFAULT NULL COMMENT 'é›‡å‘˜å§“å',
+  `phone` varchar(20) DEFAULT NULL COMMENT 'ç”µè¯å·ç ',
+  `gender` char(1) DEFAULT NULL COMMENT 'æ€§åˆ«',
+  `age` int(11) DEFAULT NULL COMMENT 'å¹´é¾„',
+  `emp_type` char(1) DEFAULT NULL COMMENT 'ï¼ˆå­—å…¸emp_typeï¼‰å‘˜å·¥ç±»å‹ï¼š0ï¼šåŒ»ç”Ÿ 1ï¼šæŠ¤å£« 2ï¼šè¡Œæ”¿ 3ï¼šé™¢å·¥',
+  `update_time` datetime DEFAULT NULL COMMENT 'æ›´æ–°æ—¥æœŸ',
+  `del_flag` char(1) DEFAULT '0' COMMENT 'é€»è¾‘åˆ é™¤æ ‡è®°ä½ï¼š0ï¼šnormal 1ï¼šåˆ é™¤',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='¹ÍÔ±ĞÅÏ¢±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='é›‡å‘˜ä¿¡æ¯è¡¨';
 
 -- ----------------------------
 -- Records of employee_info
 -- ----------------------------
-INSERT INTO `employee_info` VALUES ('1', '²ÌĞìÀ¤', '1388888888', 'ÄĞ', '21', '1', '2019-07-12 07:53:27', '0');
-INSERT INTO `employee_info` VALUES ('2', 'ÎâÒà·²', '1399999999', '1', '29', '1', '2019-07-12 07:54:08', '0');
+INSERT INTO `employee_info` VALUES ('1', 'è”¡å¾å¤', '1388888888', 'ç”·', '21', '1', '2019-07-12 07:53:27', '0');
+INSERT INTO `employee_info` VALUES ('2', 'å´äº¦å‡¡', '1399999999', '1', '29', '1', '2019-07-12 07:54:08', '0');
 
 -- ----------------------------
 -- Table structure for `prescription_detail`
 -- ----------------------------
 DROP TABLE IF EXISTS `prescription_detail`;
 CREATE TABLE `prescription_detail` (
-  `id` varchar(32) NOT NULL COMMENT 'Ö÷¼üid',
-  `p_id` varchar(32) DEFAULT NULL COMMENT '´¦·½id',
-  `item_id` varchar(21) DEFAULT NULL COMMENT 'Ò©Æ·»òÆäËûÏîÄ¿id\r\n',
-  `advice` varchar(100) DEFAULT NULL COMMENT 'ÓÃÒ©ÖöÍĞ',
-  `p_usage` varchar(10) DEFAULT NULL COMMENT '´¦·½ÓÃ·¨(×Öµäprescription_usage):0:¿Ú·ş 1£ºÆ¤ÏÂ×¢Éä 2£ºÆ¤ÊÔ 3£º¾²Âö×¢Éä  4£º¼¡Èâ×¢Éä',
-  `dosage` double(10,2) DEFAULT NULL COMMENT 'ÓÃÁ¿',
-  `frequency` char(1) DEFAULT NULL COMMENT '£¨×Öµä frequency£©ÆµÂÊ£º1£ºÒ»ÌìÒ»´Î 2£ºÒ»Ìì¶ş´Î 3£ºÒ»ÌìÈı´Î 4 Ò»ÌìËÄ´Î',
-  `day_count` int(11) DEFAULT NULL COMMENT '·şÒ©ÌìÊı',
-  `item_count` int(11) DEFAULT NULL COMMENT '´¦·½¿ª¾ßÊıÁ¿',
-  `detail_type` char(1) DEFAULT NULL COMMENT '(×Öµädetail_type)Ã÷Ï¸ÀàĞÍ£º0£ºÕı³£ 1£ºÍËÒ©£¨Èç¹ûÎªÍËÒ©×´Ì¬£¬Ö¤Ã÷±¾Ìõ¼ÇÂ¼ÒÑÍê³ÉÍËÒ©£¬µ¥Î´Íê³ÉÍË·Ñ£¬´ËÊ±´¦·½±íÖĞµÄ×Ü¼ÛµÈĞÅÏ¢»¹Î´¸üĞÂ£¬Ã÷Ï¸±íÖĞµÄĞÅÏ¢Ò²Î´¸üĞÂ£¬Èç¹ûÍË·ÑÁË£¬Ö±½ÓÉ¾³ı¸ÃÌõ¼ÇÂ¼£©',
+  `id` varchar(32) NOT NULL COMMENT 'ä¸»é”®id',
+  `p_id` varchar(32) DEFAULT NULL COMMENT 'å¤„æ–¹id',
+  `item_id` varchar(21) DEFAULT NULL COMMENT 'è¯å“æˆ–å…¶ä»–é¡¹ç›®id\r\n',
+  `advice` varchar(100) DEFAULT NULL COMMENT 'ç”¨è¯å˜±æ‰˜',
+  `p_usage` varchar(10) DEFAULT NULL COMMENT 'å¤„æ–¹ç”¨æ³•(å­—å…¸prescription_usage):0:å£æœ 1ï¼šçš®ä¸‹æ³¨å°„ 2ï¼šçš®è¯• 3ï¼šé™è„‰æ³¨å°„  4ï¼šè‚Œè‚‰æ³¨å°„',
+  `dosage` double(10,2) DEFAULT NULL COMMENT 'ç”¨é‡',
+  `frequency` char(1) DEFAULT NULL COMMENT 'ï¼ˆå­—å…¸ frequencyï¼‰é¢‘ç‡ï¼š1ï¼šä¸€å¤©ä¸€æ¬¡ 2ï¼šä¸€å¤©äºŒæ¬¡ 3ï¼šä¸€å¤©ä¸‰æ¬¡ 4 ä¸€å¤©å››æ¬¡',
+  `day_count` int(11) DEFAULT NULL COMMENT 'æœè¯å¤©æ•°',
+  `item_count` int(11) DEFAULT NULL COMMENT 'å¤„æ–¹å¼€å…·æ•°é‡',
+  `detail_type` char(1) DEFAULT NULL COMMENT '(å­—å…¸detail_type)æ˜ç»†ç±»å‹ï¼š0ï¼šæ­£å¸¸ 1ï¼šé€€è¯ï¼ˆå¦‚æœä¸ºé€€è¯çŠ¶æ€ï¼Œè¯æ˜æœ¬æ¡è®°å½•å·²å®Œæˆé€€è¯ï¼Œå•æœªå®Œæˆé€€è´¹ï¼Œæ­¤æ—¶å¤„æ–¹è¡¨ä¸­çš„æ€»ä»·ç­‰ä¿¡æ¯è¿˜æœªæ›´æ–°ï¼Œæ˜ç»†è¡¨ä¸­çš„ä¿¡æ¯ä¹Ÿæœªæ›´æ–°ï¼Œå¦‚æœé€€è´¹äº†ï¼Œç›´æ¥åˆ é™¤è¯¥æ¡è®°å½•ï¼‰',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='´¦·½Ã÷Ï¸µ¥';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='å¤„æ–¹æ˜ç»†å•';
 
 -- ----------------------------
 -- Records of prescription_detail
@@ -184,22 +184,22 @@ CREATE TABLE `prescription_detail` (
 -- ----------------------------
 DROP TABLE IF EXISTS `prescription_info`;
 CREATE TABLE `prescription_info` (
-  `id` varchar(32) NOT NULL COMMENT '´¦·½id',
-  `doctor_id` varchar(32) DEFAULT NULL COMMENT '¿ª¾ß´¦·½Ò½Éúid',
-  `p_type` varchar(10) DEFAULT ':0' COMMENT '´¦·½ÀàĞÍ£º0£ºÃÅÕï´¦·½:1£º¼±Õï´¦·½:2£º²¡·¿´¦·½£¨±£´æÔÚ×Öµäprescription_type£©',
-  `total_charge` double(7,2) DEFAULT NULL COMMENT '×Ü¼Û£¨°üÀ¨Ò½±£Ö§¸¶²¿·Ö£©£ºµÈÓÚÒ©Æ·Ô­Ê¼¼Û¸ñ*ÊıÁ¿',
-  `care_charge` double(7,2) DEFAULT NULL COMMENT 'Ò½±£³Ğµ£',
-  `charge_time` datetime DEFAULT NULL COMMENT '¸¶¿îÊ±¼ä',
-  `operator_id` varchar(32) DEFAULT NULL COMMENT '²Ù×÷¸¶¿îÖ°Ô±id£¬Ä¬ÈÏÎªµÇÂ¼ÃÅÕïÏµÍ³Õß',
-  `receipt` double(7,2) DEFAULT NULL COMMENT 'Êµ¼ÊÊÕ¿îÊıÁ¿',
-  `cash_change` double(7,2) DEFAULT NULL COMMENT 'ÕÒÁã',
-  `receipt_type` char(1) DEFAULT NULL COMMENT '£¨×Öµäreceipt_type£©ÊÕ¿î·½Ê½£º1£ºÏÖ½ğ 2£º½è¼Ç¿¨',
-  `case_id` varchar(32) DEFAULT NULL COMMENT '¹ØÁª²¡Àúid£ºÒ»¶Ô¶à¹ØÏµ£¬Ò»¸ö²¡Àú¿ÉÒÔÓĞ¶à´Î´¦·½',
-  `p_status` char(1) DEFAULT NULL COMMENT '£¨×Öµäprescription_status£©´¦·½×´Ì¬£º0£º´ı·¢ËÍ  1£ºÒÑ·¢ËÍ´ı»®¼Û 2£º»®¼Û£¨ÀàËÆÔİ´æ£©, 3:¸¶¿î´ıÈ¡Ò© 4£ºÈ¡Ò©Íê³É×´Ì¬£¨»òÒÑÍË·Ñ×´Ì¬£© 5£ºÒÑÍËÒ©  ',
-  `update_time` datetime DEFAULT NULL COMMENT '¸üĞÂÈÕÆÚ',
-  `del_flag` char(1) DEFAULT '0' COMMENT 'Âß¼­É¾³ı±ê¼ÇÎ»£º0£ºnormal 1£ºÉ¾³ı',
+  `id` varchar(32) NOT NULL COMMENT 'å¤„æ–¹id',
+  `doctor_id` varchar(32) DEFAULT NULL COMMENT 'å¼€å…·å¤„æ–¹åŒ»ç”Ÿid',
+  `p_type` varchar(10) DEFAULT ':0' COMMENT 'å¤„æ–¹ç±»å‹ï¼š0ï¼šé—¨è¯Šå¤„æ–¹:1ï¼šæ€¥è¯Šå¤„æ–¹:2ï¼šç—…æˆ¿å¤„æ–¹ï¼ˆä¿å­˜åœ¨å­—å…¸prescription_typeï¼‰',
+  `total_charge` double(7,2) DEFAULT NULL COMMENT 'æ€»ä»·ï¼ˆåŒ…æ‹¬åŒ»ä¿æ”¯ä»˜éƒ¨åˆ†ï¼‰ï¼šç­‰äºè¯å“åŸå§‹ä»·æ ¼*æ•°é‡',
+  `care_charge` double(7,2) DEFAULT NULL COMMENT 'åŒ»ä¿æ‰¿æ‹…',
+  `charge_time` datetime DEFAULT NULL COMMENT 'ä»˜æ¬¾æ—¶é—´',
+  `operator_id` varchar(32) DEFAULT NULL COMMENT 'æ“ä½œä»˜æ¬¾èŒå‘˜idï¼Œé»˜è®¤ä¸ºç™»å½•é—¨è¯Šç³»ç»Ÿè€…',
+  `receipt` double(7,2) DEFAULT NULL COMMENT 'å®é™…æ”¶æ¬¾æ•°é‡',
+  `cash_change` double(7,2) DEFAULT NULL COMMENT 'æ‰¾é›¶',
+  `receipt_type` char(1) DEFAULT NULL COMMENT 'ï¼ˆå­—å…¸receipt_typeï¼‰æ”¶æ¬¾æ–¹å¼ï¼š1ï¼šç°é‡‘ 2ï¼šå€Ÿè®°å¡',
+  `case_id` varchar(32) DEFAULT NULL COMMENT 'å…³è”ç—…å†idï¼šä¸€å¯¹å¤šå…³ç³»ï¼Œä¸€ä¸ªç—…å†å¯ä»¥æœ‰å¤šæ¬¡å¤„æ–¹',
+  `p_status` char(1) DEFAULT NULL COMMENT 'ï¼ˆå­—å…¸prescription_statusï¼‰å¤„æ–¹çŠ¶æ€ï¼š0ï¼šå¾…å‘é€  1ï¼šå·²å‘é€å¾…åˆ’ä»· 2ï¼šåˆ’ä»·ï¼ˆç±»ä¼¼æš‚å­˜ï¼‰, 3:ä»˜æ¬¾å¾…å–è¯ 4ï¼šå–è¯å®ŒæˆçŠ¶æ€ï¼ˆæˆ–å·²é€€è´¹çŠ¶æ€ï¼‰ 5ï¼šå·²é€€è¯  ',
+  `update_time` datetime DEFAULT NULL COMMENT 'æ›´æ–°æ—¥æœŸ',
+  `del_flag` char(1) DEFAULT '0' COMMENT 'é€»è¾‘åˆ é™¤æ ‡è®°ä½ï¼š0ï¼šnormal 1ï¼šåˆ é™¤',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='´¦·½ĞÅÏ¢±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='å¤„æ–¹ä¿¡æ¯è¡¨';
 
 -- ----------------------------
 -- Records of prescription_info
@@ -210,15 +210,15 @@ CREATE TABLE `prescription_info` (
 -- ----------------------------
 DROP TABLE IF EXISTS `registration_info`;
 CREATE TABLE `registration_info` (
-  `id` varchar(12) NOT NULL COMMENT '¹ÒºÅÆ±¾İºÅ£¨»ò·¢Æ±ºÅ£©×÷ÎªÖ÷¼ü£ºÈç201808190001',
-  `reg_level` char(1) DEFAULT '0' COMMENT '£¨×Öµä£ºreg_level£©¹ÒºÅ¼¶±ğ£º 0£ºÆÕÍ¨ 1:×¨¼Ò 2¸ß¼¶×¨¼Ò',
-  `settle_type` varchar(10) DEFAULT NULL COMMENT '(×Öµä£ºsettle_type)½áËãÀàĞÍ:0:×Ô·Ñ  1£ºÒ½±£',
-  `case_id` varchar(12) DEFAULT NULL COMMENT '¹ØÁª²¡Àúid',
-  `charge_status` char(1) DEFAULT NULL COMMENT '(×Öµächarge_status)¹ÒºÅ×´Ì¬£º0£ºÎ´¸¶¿î 1£ºÒÑ¸¶¿î 2£ºÍË·Ñ',
-  `update_time` datetime DEFAULT NULL COMMENT '¸üĞÂÈÕÆÚ',
-  `del_flag` char(1) DEFAULT '0' COMMENT 'Âß¼­É¾³ı±ê¼ÇÎ»£º0£ºnormal 1£ºÉ¾³ı',
+  `id` varchar(12) NOT NULL COMMENT 'æŒ‚å·ç¥¨æ®å·ï¼ˆæˆ–å‘ç¥¨å·ï¼‰ä½œä¸ºä¸»é”®ï¼šå¦‚201808190001',
+  `reg_level` char(1) DEFAULT '0' COMMENT 'ï¼ˆå­—å…¸ï¼šreg_levelï¼‰æŒ‚å·çº§åˆ«ï¼š 0ï¼šæ™®é€š 1:ä¸“å®¶ 2é«˜çº§ä¸“å®¶',
+  `settle_type` varchar(10) DEFAULT NULL COMMENT '(å­—å…¸ï¼šsettle_type)ç»“ç®—ç±»å‹:0:è‡ªè´¹  1ï¼šåŒ»ä¿',
+  `case_id` varchar(12) DEFAULT NULL COMMENT 'å…³è”ç—…å†id',
+  `charge_status` char(1) DEFAULT NULL COMMENT '(å­—å…¸charge_status)æŒ‚å·çŠ¶æ€ï¼š0ï¼šæœªä»˜æ¬¾ 1ï¼šå·²ä»˜æ¬¾ 2ï¼šé€€è´¹',
+  `update_time` datetime DEFAULT NULL COMMENT 'æ›´æ–°æ—¥æœŸ',
+  `del_flag` char(1) DEFAULT '0' COMMENT 'é€»è¾‘åˆ é™¤æ ‡è®°ä½ï¼š0ï¼šnormal 1ï¼šåˆ é™¤',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='¹ÒºÅĞÅÏ¢±í£ºÓë²¡ÀúÒ»¶Ô¶à¹ØÏµ£¬×îĞÂµÄÒ»ÌõÎªÓĞĞ§';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='æŒ‚å·ä¿¡æ¯è¡¨ï¼šä¸ç—…å†ä¸€å¯¹å¤šå…³ç³»ï¼Œæœ€æ–°çš„ä¸€æ¡ä¸ºæœ‰æ•ˆ';
 
 -- ----------------------------
 -- Records of registration_info
@@ -229,12 +229,12 @@ CREATE TABLE `registration_info` (
 -- ----------------------------
 DROP TABLE IF EXISTS `regist_detail`;
 CREATE TABLE `regist_detail` (
-  `reg_id` varchar(12) NOT NULL COMMENT '¹ÒºÅid',
-  `item_id` varchar(32) NOT NULL COMMENT 'ÊÕ·ÑÏîÄ¿id',
-  `item_count` int(11) DEFAULT NULL COMMENT 'ÊÕ·ÑÏîÄ¿ÊıÁ¿',
-  `detail_type` char(1) DEFAULT NULL COMMENT '£¨×Öµädetail_type£©Ã÷Ï¸ÀàĞÍ£º0:Õı³£ 1£ºÍË·Ñ',
+  `reg_id` varchar(12) NOT NULL COMMENT 'æŒ‚å·id',
+  `item_id` varchar(32) NOT NULL COMMENT 'æ”¶è´¹é¡¹ç›®id',
+  `item_count` int(11) DEFAULT NULL COMMENT 'æ”¶è´¹é¡¹ç›®æ•°é‡',
+  `detail_type` char(1) DEFAULT NULL COMMENT 'ï¼ˆå­—å…¸detail_typeï¼‰æ˜ç»†ç±»å‹ï¼š0:æ­£å¸¸ 1ï¼šé€€è´¹',
   PRIMARY KEY (`reg_id`,`item_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='¹ÒºÅÊÕ·ÑÃ÷Ï¸';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='æŒ‚å·æ”¶è´¹æ˜ç»†';
 
 -- ----------------------------
 -- Records of regist_detail
@@ -245,39 +245,39 @@ CREATE TABLE `regist_detail` (
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_dict`;
 CREATE TABLE `sys_dict` (
-  `id` varchar(32) NOT NULL COMMENT 'Ö÷¼ü',
-  `dict_type` varchar(32) DEFAULT NULL COMMENT '×ÖµäÖÖÀà',
-  `keyword` varchar(32) DEFAULT NULL COMMENT '¼ü',
-  `val` varchar(32) DEFAULT NULL COMMENT 'Öµ',
+  `id` varchar(32) NOT NULL COMMENT 'ä¸»é”®',
+  `dict_type` varchar(32) DEFAULT NULL COMMENT 'å­—å…¸ç§ç±»',
+  `keyword` varchar(32) DEFAULT NULL COMMENT 'é”®',
+  `val` varchar(32) DEFAULT NULL COMMENT 'å€¼',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='×Öµä±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='å­—å…¸è¡¨';
 
 -- ----------------------------
 -- Records of sys_dict
 -- ----------------------------
-INSERT INTO `sys_dict` VALUES ('1', 'depart_type', 'medical', 'Ò½ÁÆ');
-INSERT INTO `sys_dict` VALUES ('2', 'depart_type', 'admin', 'ĞĞÕş');
-INSERT INTO `sys_dict` VALUES ('3', 'depart_level', '1', 'Ò»¼¶');
-INSERT INTO `sys_dict` VALUES ('4', 'depart_level', '2', '¶ş¼¶');
-INSERT INTO `sys_dict` VALUES ('5', 'depart_level', '3', 'Èı¼¶');
-INSERT INTO `sys_dict` VALUES ('6', 'gender', '0', 'Å®');
-INSERT INTO `sys_dict` VALUES ('7', 'gender', '1', 'ÄĞ');
-INSERT INTO `sys_dict` VALUES ('8', 'gender', '2', 'Î´Öª');
-INSERT INTO `sys_dict` VALUES ('9', 'gender', '3', 'Ë«ĞÔ');
+INSERT INTO `sys_dict` VALUES ('1', 'depart_type', 'medical', 'åŒ»ç–—');
+INSERT INTO `sys_dict` VALUES ('2', 'depart_type', 'admin', 'è¡Œæ”¿');
+INSERT INTO `sys_dict` VALUES ('3', 'depart_level', '1', 'ä¸€çº§');
+INSERT INTO `sys_dict` VALUES ('4', 'depart_level', '2', 'äºŒçº§');
+INSERT INTO `sys_dict` VALUES ('5', 'depart_level', '3', 'ä¸‰çº§');
+INSERT INTO `sys_dict` VALUES ('6', 'gender', '0', 'å¥³');
+INSERT INTO `sys_dict` VALUES ('7', 'gender', '1', 'ç”·');
+INSERT INTO `sys_dict` VALUES ('8', 'gender', '2', 'æœªçŸ¥');
+INSERT INTO `sys_dict` VALUES ('9', 'gender', '3', 'åŒæ€§');
 
 -- ----------------------------
 -- Table structure for `user_info`
 -- ----------------------------
 DROP TABLE IF EXISTS `user_info`;
 CREATE TABLE `user_info` (
-  `id` varchar(32) NOT NULL COMMENT 'Ö÷¼üid',
-  `emp_id` varchar(32) DEFAULT NULL COMMENT 'Ô±¹¤id',
-  `username` varchar(32) DEFAULT NULL COMMENT 'ÓÃ»§Ãû',
-  `password` varchar(64) DEFAULT NULL COMMENT 'ÃÜÂë',
-  `update_time` datetime DEFAULT NULL COMMENT '¸üĞÂÈÕÆÚ',
-  `del_flag` char(1) DEFAULT '0' COMMENT 'Âß¼­É¾³ı±ê¼ÇÎ»£º0£ºnormal 1£ºÉ¾³ı',
+  `id` varchar(32) NOT NULL COMMENT 'ä¸»é”®id',
+  `emp_id` varchar(32) DEFAULT NULL COMMENT 'å‘˜å·¥id',
+  `username` varchar(32) DEFAULT NULL COMMENT 'ç”¨æˆ·å',
+  `password` varchar(64) DEFAULT NULL COMMENT 'å¯†ç ',
+  `update_time` datetime DEFAULT NULL COMMENT 'æ›´æ–°æ—¥æœŸ',
+  `del_flag` char(1) DEFAULT '0' COMMENT 'é€»è¾‘åˆ é™¤æ ‡è®°ä½ï¼š0ï¼šnormal 1ï¼šåˆ é™¤',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='µ±Ç°Ä£¿éÓÃ»§ĞÅÏ¢±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='å½“å‰æ¨¡å—ç”¨æˆ·ä¿¡æ¯è¡¨';
 
 -- ----------------------------
 -- Records of user_info
