@@ -24,7 +24,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.38</version>
+            <version>8.0.28</version>
         </dependency>
         <!--向外界请求服务，除了使用ribbon以外，还可以用已经封装了ribbon以及hystrix（熔断器）的feign来进行服务调用-->
         <dependency>
